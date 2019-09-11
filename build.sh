@@ -110,7 +110,7 @@ if [ "$RAY_BUILD_JAVA" == "YES" ]; then
 fi
 
 if [ "$RAY_BUILD_PYTHON" == "YES" ]; then
-  $BAZEL_EXECUTABLE build //:ray_pkg --verbose_failures
+  $BAZEL_EXECUTABLE build //:ray_pkg --verbose_failures  --incompatible_depset_is_not_iterable=false
 fi
 
 popd
